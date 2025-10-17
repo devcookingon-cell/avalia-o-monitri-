@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class ConversaoTemperaturaNovo {
+    public static double celsiusParaFahrenheit(double c) {
+        return (c * 9/5) + 32;
+    }
+
+    public static double celsiusParaKelvin(double c) {
+        return c + 273.15;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Digite a temperatura em Celsius: ");
+        double celsius = sc.nextDouble();
+
+        System.out.printf("Temperatura em Celsius: %.2f ºC%n", celsius);
+        System.out.printf("Temperatura em Fahrenheit: %.2f ºF%n", celsiusParaFahrenheit(celsius));
+        System.out.printf("Temperatura em Kelvin: %.2f K%n", celsiusParaKelvin(celsius));
+
+        sc.close();
+    }
+}
