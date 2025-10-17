@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class MediaEscolarNovo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double somaNotas = 0;
+
+        System.out.println("Digite as 8 notas do aluno:");
+        for (int i = 1; i <= 8; i++) {
+            System.out.print("Nota " + i + ": ");
+            somaNotas += sc.nextDouble();
+            // Imprime média parcial do bimestre a cada duas notas
+            if (i % 2 == 0) {
+                System.out.printf("Média do %dº bimestre: %.2f%n", i / 2, somaNotas / 2);
+                somaNotas = 0; // reset para o próximo bimestre
+            }
+        }
+
+        System.out.println("\nDigite as mesmas notas novamente para calcular a média final:");
+        double total = 0;
+        for (int i = 1; i <= 8; i++) {
+            System.out.print("Nota " + i + ": ");
+            total += sc.nextDouble();
+        }
+        double mediaFinal = total / 8;
+        System.out.printf("Média Final: %.2f%n", mediaFinal);
+
+        sc.close();
+    }
+}
